@@ -9,8 +9,18 @@ type Player struct {
 	name string
 }
 
-func (p Player) getId() int {
+func (p *Player) GetId() int {
 	return p.id
+}
+
+//该方法可以修改成功
+func (p *Player) SetId(id int) {
+	p.id = id
+}
+
+//该方无法修改对象的id值
+func (p Player) SetIId(id int) {
+	p.id = id
 }
 
 func TestStruct() {
@@ -18,7 +28,12 @@ func TestStruct() {
 	p.id = 10
 	p.name = "hello"
 	fmt.Println(p)
-	fmt.Println(p.getId())
+
+	p.SetId(11)
+	fmt.Println(p)
+
+	p.SetIId(12)
+	fmt.Println(p)
 
 	p1 := Player{id: 1, name: "boys"}
 	fmt.Println(p1)

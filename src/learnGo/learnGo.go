@@ -1,4 +1,3 @@
-// firstGo project main.go
 package main
 
 import (
@@ -18,9 +17,9 @@ const (
 func main() {
 
 	time.Sleep(10000)
-	mytest.TestMap()
+	//	mytest.TestMap()
 	//	mytest.TestArray()
-	//	mytest.TestStruct()
+	mytest.TestStruct()
 	//	mytest.TestWeb()
 
 }

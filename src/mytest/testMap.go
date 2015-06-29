@@ -22,4 +22,10 @@ func TestMap() {
 	delete(imap, "b")
 	fmt.Println(imap)
 
+	m1 := make(map[int]map[int]string)
+	m1[1] = make(map[int]string)
+	m1[1][1] = "please"
+	m1[1][2] = "help"
+	m1[1][3] = "me"
+	fmt.Println(m1)
 }

@@ -3,7 +3,6 @@ package main
 import (
 	"fmt"
 	"mytest"
-	"time"
 )
 
 const MAX_NUM int = 100
@@ -16,11 +15,11 @@ const (
 
 func main() {
 
-	time.Sleep(10000)
 	//	mytest.TestMap()
 	//	mytest.TestArray()
-	mytest.TestStruct()
+	//	go mytest.TestStruct()
 	//	mytest.TestWeb()
+	mytest.TestTime()
 
 }
 

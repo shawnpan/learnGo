@@ -20,7 +20,7 @@ func main() {
 	//	go mytest.TestStruct()
 	//	mytest.TestWeb()
 	mytest.TestTime()
-
+	mytest.TestString()
 }
 
 func baseTest() {

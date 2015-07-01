@@ -21,6 +21,7 @@ func main() {
 	//	mytest.TestWeb()
 	mytest.TestTime()
 	mytest.TestString()
+
 }
 
 func baseTest() {

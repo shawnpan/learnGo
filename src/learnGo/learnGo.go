@@ -19,8 +19,10 @@ func main() {
 	//	mytest.TestArray()
 	//	go mytest.TestStruct()
 	//	mytest.TestWeb()
-	mytest.TestTime()
-	mytest.TestString()
+	// mytest.TestTime()
+	// mytest.TestString()
+	// mytest.TestStrings()
+	mytest.TestFile()
 
 }
 

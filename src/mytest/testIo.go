@@ -16,6 +16,8 @@ func TestFile() {
 	testReadFull(fn)
 	testReadAtLeast(fn)
 	testIoutilReadFile(fn)
+	testIoutilReadAll(fn)
+	testWriteFile(fn)
 
 }
 func testReadFull(fn string) {
@@ -78,4 +80,38 @@ func testIoutilReadFile(fn string) {
 		return
 	}
 	fmt.Println(string(f))
+}
+func testIoutilReadAll(fn string) {
+	fmt.Println("testIoutilReadAll---------------------------------------")
+	r, rerr := os.Open(fn)
+	defer r.Close()
+	if rerr != nil {
+		fmt.Println("open file error : ", fn, rerr)
+		return
+	}
+	f, err := ioutil.ReadAll(r)
+	if err != nil {
+		fmt.Println("open file error : ", fn, err)
+		return
+	}
+	fmt.Println(string(f))
+	r.Close()
+}
+func testWriteFile(fn string) {
+	fmt.Println("testWriteFile---------------------------------------")
+	f, rerr := os.OpenFile(fn, os.O_RDWR, os.ModePerm)
+
+	defer f.Close()
+	if rerr != nil {
+		fmt.Println("open file error : ", fn, rerr)
+		return
+	}
+	n, werr := io.WriteString(f, "helloGood")
+	if werr != nil {
+		fmt.Println("write file error : ", fn, werr, n)
+		return
+	}
+	// ioutil.WriteFile(filename, data, perm)
+	f.Close()
+	testIoutilReadFile(fn)
 }

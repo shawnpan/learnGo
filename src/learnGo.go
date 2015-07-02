@@ -15,12 +15,12 @@ const (
 
 func main() {
 
-	//	mytest.TestMap()
-	mytest.TestArray()
-	//	mytest.TestStruct()
-	//	mytest.TestWeb()
+	// mytest.TestMap()
+	// mytest.TestArray()
+	// mytest.TestStruct()
+	// mytest.TestWeb()
 	// mytest.TestTime()
-	// mytest.TestString()
+	mytest.TestString()
 	// mytest.TestStrings()
 	// mytest.TestFile()
 	// mytest.TestFileServer()

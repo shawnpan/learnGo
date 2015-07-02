@@ -8,13 +8,22 @@ import (
 func TestString() {
 	fmt.Println("testString --------------------------------")
 	var s string = "abcdefg"
-	fmt.Println(s)
+	fmt.Println("s = ", s)
 
 	l := len(s)
 	fmt.Println(l)
 
 	ss := s[2:5]
 	fmt.Println(ss)
+
+	//转换字符串的内容，先转换a的类型为[]byte
+	c := []byte(s)
+	fmt.Println("c = ", c)
+
+	c[0] = 'z'
+	var d string = string(c)
+	fmt.Println("d = ", d)
+
 }
 
 func TestStrings() {

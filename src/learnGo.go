@@ -22,7 +22,8 @@ func main() {
 	// mytest.TestTime()
 	// mytest.TestString()
 	// mytest.TestStrings()
-	mytest.TestFile()
+	// mytest.TestFile()
+	mytest.TestFileServer()
 
 }
 

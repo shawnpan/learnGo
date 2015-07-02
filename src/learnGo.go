@@ -16,8 +16,8 @@ const (
 func main() {
 
 	//	mytest.TestMap()
-	//	mytest.TestArray()
-	//	go mytest.TestStruct()
+	mytest.TestArray()
+	//	mytest.TestStruct()
 	//	mytest.TestWeb()
 	// mytest.TestTime()
 	// mytest.TestString()
@@ -27,7 +27,7 @@ func main() {
 	// mytest.TestOS()
 	// mytest.TestIoUtil()
 	// mytest.TestIni()
-	mytest.TestMysql()
+	// mytest.TestMysql()
 
 }
 

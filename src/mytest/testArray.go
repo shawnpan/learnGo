@@ -18,4 +18,11 @@ func TestArray() {
 	a1[1] = 99
 	fmt.Println(a)
 	fmt.Println(a1)
+
+	testSlice()
+}
+func testSlice() {
+	var s1 []int
+	s1 = make([]int, 3, 10)
+	fmt.Println(s1)
 }

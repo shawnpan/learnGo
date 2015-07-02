@@ -99,7 +99,7 @@ func testIoutilReadAll(fn string) {
 }
 func testWriteFile(fn string) {
 	fmt.Println("testWriteFile---------------------------------------")
-	f, rerr := os.OpenFile(fn, os.O_RDWR, os.ModePerm)
+	f, rerr := os.OpenFile(fn, os.O_RDWR|os.O_APPEND, os.ModePerm)
 
 	defer f.Close()
 	if rerr != nil {

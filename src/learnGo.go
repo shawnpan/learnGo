@@ -23,7 +23,8 @@ func main() {
 	// mytest.TestString()
 	// mytest.TestStrings()
 	// mytest.TestFile()
-	mytest.TestFileServer()
+	// mytest.TestFileServer()
+	mytest.TestOS()
 
 }
 

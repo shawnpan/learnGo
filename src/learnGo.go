@@ -24,7 +24,8 @@ func main() {
 	// mytest.TestStrings()
 	// mytest.TestFile()
 	// mytest.TestFileServer()
-	mytest.TestOS()
+	// mytest.TestOS()
+	// mytest.TestIoUtil()
 
 }
 

@@ -26,6 +26,8 @@ func main() {
 	// mytest.TestFileServer()
 	// mytest.TestOS()
 	// mytest.TestIoUtil()
+	// mytest.TestIni()
+	mytest.TestMysql()
 
 }
 

@@ -20,7 +20,7 @@ func main() {
 	// mytest.TestStruct()
 	// mytest.TestWeb()
 	// mytest.TestTime()
-	mytest.TestString()
+	// mytest.TestString()
 	// mytest.TestStrings()
 	// mytest.TestFile()
 	// mytest.TestFileServer()
@@ -28,6 +28,9 @@ func main() {
 	// mytest.TestIoUtil()
 	// mytest.TestIni()
 	// mytest.TestMysql()
+	// mytest.TestJSON()
+	// mytest.TestContainer()
+	mytest.TestRand()
 }
 
 func baseTest() {

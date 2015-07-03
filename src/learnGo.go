@@ -28,7 +28,6 @@ func main() {
 	// mytest.TestIoUtil()
 	// mytest.TestIni()
 	// mytest.TestMysql()
-
 }
 
 func baseTest() {

@@ -5,8 +5,8 @@ import (
 )
 
 func TestArray() {
-	testArray()
-	// testSlice()
+	// testArray()
+	testSlice()
 }
 func testArray() {
 	fmt.Println("testArray-----------------------")

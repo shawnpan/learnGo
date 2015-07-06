@@ -31,7 +31,9 @@ func main() {
 	// mytest.TestJSON()
 	// mytest.TestContainer()
 	// mytest.TestRand()
-	mytest.TestMath()
+	// mytest.TestMath()
+	fmt.Println("main")
+	mytest.TestMyNet()
 }
 
 func baseTest() {

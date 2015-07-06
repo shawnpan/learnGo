@@ -30,7 +30,8 @@ func main() {
 	// mytest.TestMysql()
 	// mytest.TestJSON()
 	// mytest.TestContainer()
-	mytest.TestRand()
+	// mytest.TestRand()
+	mytest.TestMath()
 }
 
 func baseTest() {

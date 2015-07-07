@@ -32,8 +32,9 @@ func main() {
 	// mytest.TestContainer()
 	// mytest.TestRand()
 	// mytest.TestMath()
-	fmt.Println("main")
-	mytest.TestMyNet()
+	// mytest.TestMyNet()
+	// mytest.TestGet()
+	// mytest.TestNewRequest()
 }
 
 func baseTest() {

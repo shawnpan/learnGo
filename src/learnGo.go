@@ -35,6 +35,7 @@ func main() {
 	// mytest.TestMyNet()
 	// mytest.TestGet()
 	// mytest.TestNewRequest()
+	mytest.TestBufio()
 }
 
 func baseTest() {

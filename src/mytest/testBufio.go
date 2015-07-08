@@ -4,8 +4,18 @@ import (
 	"bufio"
 	"bytes"
 	"fmt"
+	"io"
 	"strings"
 )
+
+func TestBufio() {
+	testPeek()
+	testRead()
+	testReadByte()
+	testReadRune()
+	testBuffered()
+	tsetReadSlice()
+}
 
 // bufio 包实现了带缓存的 I/O 操作
 // 它封装一个 io.Reader 或 io.Writer 对象
@@ -35,13 +45,18 @@ import (
 func testPeek() {
 	s := strings.NewReader("ABCDEFG")
 	br := bufio.NewReader(s)
-	b, _ := br.Peek(5)
-	fmt.Printf("%s\n", b)
-	// ABCDE
+	b, err := br.Peek(5)
+	fmt.Println("Error : ", err) // nil
+	fmt.Printf("%s\n", b)        // ABCDE
+
 	b[0] = 'a'
-	b, _ = br.Peek(5)
-	fmt.Printf("%s\n", b)
-	// aBCDE
+	b, err = br.Peek(5)
+	fmt.Println("Error : ", err) // nil
+	fmt.Printf("%s\n", b)        // aBCDE
+
+	b, err = br.Peek(8)
+	fmt.Println("Error : ", err) // EOF
+	fmt.Printf("%s\n", b)        //aBCDEFG
 }
 
 // ------------------------------------------------------------
@@ -52,19 +67,22 @@ func testPeek() {
 // 则直接从底层 io.Reader 向 p 中读出数据，不经过缓存
 // 只有当 b 中无可读数据时，才返回 (0, io.EOF)
 
-func tsetRead() {
+func testRead() {
 	s := strings.NewReader("ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890")
 	br := bufio.NewReader(s)
 	b := make([]byte, 20)
 	n, err := br.Read(b)
-	fmt.Printf("%-20s %-2v %v\n", b[:n], n, err)
-	// ABCDEFGHIJKLMNOPQRST 20 <nil>
+	fmt.Printf("%-20s %-2v %v\n", b[:n], n, err) // ABCDEFGHIJKLMNOPQRST 20 <nil>
+
 	n, err = br.Read(b)
-	fmt.Printf("%-20s %-2v %v\n", b[:n], n, err)
-	// UVWXYZ1234567890     16 <nil>
+	fmt.Printf("%-20s %-2v %v\n", b[:n], n, err) // UVWXYZ1234567890     16 <nil>
+
 	n, err = br.Read(b)
-	fmt.Printf("%-20s %-2v %v\n", b[:n], n, err)
-	//                      0  EOF
+	fmt.Printf("%-20s %-2v %v\n", b[:n], n, err) //                      0  EOF
+	if err == io.EOF {
+		fmt.Println(" err is io.EOF ") //err is io.EOF
+	}
+
 }
 
 // ------------------------------------------------------------
@@ -121,11 +139,11 @@ func testReadRune() {
 func testBuffered() {
 	s := strings.NewReader("你好，世界！")
 	br := bufio.NewReader(s)
-	fmt.Println(br.Buffered())
-	// 0
+	fmt.Println(br.Buffered()) // 0
+
 	br.Peek(1)
-	fmt.Println(br.Buffered())
-	// 18
+	fmt.Println(br.Buffered()) // 18
+
 }
 
 // ------------------------------------------------------------

@@ -1,4 +1,4 @@
-package mytest
+package testio
 
 import (
 	"bufio"
@@ -9,12 +9,25 @@ import (
 )
 
 func TestBufio() {
-	testPeek()
-	testRead()
-	testReadByte()
-	testReadRune()
-	testBuffered()
-	tsetReadSlice()
+	// testPeek()
+	// testRead()
+	// testReadByte()
+	// testReadRune()
+	// testBuffered()
+	// tsetReadSlice()
+	// testReadLine()
+	// testReadByteByDelim()
+	// testReadString()
+
+	// testWriteTo()
+	// testWrite()
+	// testWriteByteRune()
+	// testReadFrom()
+
+	testScan()
+	testSplit()
+	testScanBytes()
+	testScanRunes()
 }
 
 // bufio 包实现了带缓存的 I/O 操作
@@ -430,6 +443,7 @@ func testScanBytes() {
 	for bs.Scan() {
 		fmt.Printf("%s ", bs.Text())
 	}
+	fmt.Println("")
 }
 
 // ------------------------------------------------------------
@@ -445,6 +459,7 @@ func testScanRunes() {
 	for bs.Scan() {
 		fmt.Printf("%s ", bs.Text())
 	} // H e l l o   世 界 ！
+	fmt.Println("")
 }
 
 // ------------------------------------------------------------

@@ -2,7 +2,9 @@ package main
 
 import (
 	"fmt"
-	"mytest"
+	_ "mytest"
+	_ "mytest/testdb"
+	"mytest/testio"
 )
 
 const MAX_NUM int = 100
@@ -35,7 +37,7 @@ func main() {
 	// mytest.TestMyNet()
 	// mytest.TestGet()
 	// mytest.TestNewRequest()
-	mytest.TestBufio()
+	testio.TestBufio()
 }
 
 func baseTest() {

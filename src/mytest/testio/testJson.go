@@ -1,4 +1,4 @@
-package mytest
+package testio
 
 import (
 	"encoding/json"

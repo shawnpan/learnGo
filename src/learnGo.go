@@ -4,7 +4,8 @@ import (
 	"fmt"
 	_ "mytest/testbase"
 	_ "mytest/testdb"
-	"mytest/testio"
+	_ "mytest/testio"
+	"mytest/testtime"
 )
 
 const MAX_NUM int = 100
@@ -37,7 +38,8 @@ func main() {
 	// mytest.TestMyNet()
 	// mytest.TestGet()
 	// mytest.TestNewRequest()
-	testio.TestBufio()
+	// testio.TestBufio()
+	testtime.TestTimer()
 }
 
 func baseTest() {

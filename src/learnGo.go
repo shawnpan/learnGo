@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	_ "mytest"
+	_ "mytest/testbase"
 	_ "mytest/testdb"
 	"mytest/testio"
 )

@@ -9,7 +9,7 @@ func TestOS() {
 	testFileInfo()
 	testGetwd()
 	testENV()
-	// testMkDir() // 请先mk再rm
+	// testMkDir()
 	// testRmDir()
 	testRename()
 }
@@ -22,7 +22,7 @@ func testGetwd() {
 	}
 	fmt.Println("dir = ", dir)
 
-	// 切换目录
+	// 鍒囨崲鐩綍
 	os.Chdir(dir + "/mytest")
 
 	dir, err = os.Getwd()
@@ -32,7 +32,7 @@ func testGetwd() {
 	}
 	fmt.Println("dir = ", dir)
 
-	// 切换目录
+	// 鍒囨崲鐩綍
 	os.Chdir(olddir)
 
 }

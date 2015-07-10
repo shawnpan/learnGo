@@ -2,10 +2,11 @@ package main
 
 import (
 	"fmt"
+	"mytest/testalgorithm"
 	_ "mytest/testbase"
 	_ "mytest/testdb"
 	_ "mytest/testio"
-	"mytest/testtime"
+	_ "mytest/testtime"
 )
 
 const MAX_NUM int = 100
@@ -39,7 +40,8 @@ func main() {
 	// mytest.TestGet()
 	// mytest.TestNewRequest()
 	// testio.TestBufio()
-	testtime.TestTimer()
+	// testtime.TestTimer()
+	testalgorithm.TestSort()
 }
 
 func baseTest() {

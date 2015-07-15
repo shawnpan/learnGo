@@ -8,7 +8,7 @@ import (
 )
 
 func TestSort() {
-	size := 100000
+	size := 10
 	arr := mkArr(size)
 	start := time.Now().Unix()
 	testBubbleSort1(arr)
@@ -21,10 +21,17 @@ func TestSort() {
 	fmt.Println("time use : ", (time.Now().Unix() - start), "s")
 	// checkArr(arr)
 
-	size = 1000000
+	// size = 10
 	arr = mkArr(size)
 	start = time.Now().Unix()
 	testQuickSort(arr)
+	fmt.Println("time use : ", (time.Now().Unix() - start), "s")
+	// checkArr(arr)
+
+	// size = 100
+	arr = mkArr(size)
+	arr = mkArr(size)
+	testInsertSort(arr)
 	fmt.Println("time use : ", (time.Now().Unix() - start), "s")
 	// checkArr(arr)
 
@@ -119,4 +126,20 @@ func quickSort(arr []int, low int, high int) {
 	arr[i] = vot              // 基准值的最终位置
 	quickSort(arr, low, j-1)  // 前端子序列再排序
 	quickSort(arr, i+1, high) // 后端子序列再排序
+}
+
+func testInsertSort(arr []int) {
+	length := len(arr)
+	var temp int
+	for i := 1; i < length; i++ {
+		for j := i - 1; j >= 0; j-- {
+			if arr[j+1] < arr[j] {
+				temp = arr[j]
+				arr[j] = arr[j+1]
+				arr[j+1] = temp
+			} else {
+				break
+			}
+		}
+	}
 }

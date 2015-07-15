@@ -128,6 +128,7 @@ func quickSort(arr []int, low int, high int) {
 	quickSort(arr, i+1, high) // 后端子序列再排序
 }
 
+// 插入排序
 func testInsertSort(arr []int) {
 	length := len(arr)
 	var temp int

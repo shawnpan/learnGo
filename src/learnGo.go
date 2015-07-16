@@ -2,7 +2,8 @@ package main
 
 import (
 	"fmt"
-	"mytest/testalgorithm"
+	"mytest/testGoroutine"
+	_ "mytest/testalgorithm"
 	_ "mytest/testbase"
 	_ "mytest/testdb"
 	_ "mytest/testio"
@@ -41,7 +42,9 @@ func main() {
 	// mytest.TestNewRequest()
 	// testio.TestBufio()
 	// testtime.TestTimer()
-	testalgorithm.TestSort()
+	// testalgorithm.TestSort()
+	testGoroutine.TestGoroutine()
+
 }
 
 func baseTest() {

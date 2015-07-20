@@ -24,11 +24,12 @@ func TestGoroutine() {
 	}
 	fmt.Println(temp)
 	fmt.Println(1 << 20)
+
 }
 
 func func1() {
-	temp++
 	ch <- 1
+	temp++
 }
 
 func func2() {

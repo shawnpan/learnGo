@@ -2,9 +2,9 @@ package main
 
 import (
 	"fmt"
-	"mytest/testGoroutine"
+	_ "mytest/testGoroutine"
 	_ "mytest/testalgorithm"
-	_ "mytest/testbase"
+	"mytest/testbase"
 	_ "mytest/testdb"
 	_ "mytest/testio"
 	_ "mytest/testtime"
@@ -20,31 +20,31 @@ const (
 
 func main() {
 
-	// mytest.TestMap()
-	// mytest.TestArray()
-	// mytest.TestStruct()
-	// mytest.TestWeb()
-	// mytest.TestTime()
-	// mytest.TestString()
-	// mytest.TestStrings()
-	// mytest.TestFile()
-	// mytest.TestFileServer()
-	// mytest.TestOS()
-	// mytest.TestIoUtil()
-	// mytest.TestIni()
-	// mytest.TestMysql()
-	// mytest.TestJSON()
-	// mytest.TestContainer()
-	// mytest.TestRand()
-	// mytest.TestMath()
-	// mytest.TestMyNet()
-	// mytest.TestGet()
-	// mytest.TestNewRequest()
+	// testbase.TestMap()
+	// testbase.TestArray()
+	// testbase.TestStruct()
+	// testbase.TestWeb()
+	testbase.TestTime()
+	// testbase.TestString()
+	// testbase.TestStrings()
+	// testbase.TestFile()
+	// testbase.TestFileServer()
+	// testbase.TestOS()
+	// testbase.TestIoUtil()
+	// testbase.TestIni()
+	// testbase.TestMysql()
+	// testbase.TestJSON()
+	// testbase.TestContainer()
+	// testbase.TestRand()
+	// testbase.TestMath()
+	// testbase.TestMyNet()
+	// testbase.TestGet()
+	// testbase.TestNewRequest()
 	// testio.TestBufio()
 	// testtime.TestTimer()
 	// testalgorithm.TestSort()
-	testGoroutine.TestGoroutine()
-
+	// testGoroutine.TestGoroutine()
+	// testbase.TestChan()
 }
 
 func baseTest() {

@@ -7,7 +7,7 @@ import (
 
 func TestTime() {
 	fmt.Println("testTime-----------------------")
-	//	testTick()
+	// testTick()
 	t := time.Date(2111, 11, 11, 15, 15, 15, 15, time.Local)
 	fmt.Println(t)
 
@@ -33,7 +33,11 @@ func TestTime() {
 	fmt.Printf("%d-%d-%d %d:%d:%d", y, m, d, h, mi, s)
 	fmt.Println("")
 
-	time.Sleep(2 * time.Second)
+	time.Sleep(100 * time.Millisecond)
+
+	t3 := time.Now()
+	fmt.Println("t3.Sub(t1) : ", t3.Sub(t1))
+
 }
 func testTick() {
 	c := time.Tick(5 * time.Second)

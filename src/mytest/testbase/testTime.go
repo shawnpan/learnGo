@@ -38,6 +38,8 @@ func TestTime() {
 	t3 := time.Now()
 	fmt.Println("t3.Sub(t1) : ", t3.Sub(t1))
 
+	fmt.Println("test")
+
 }
 func testTick() {
 	c := time.Tick(5 * time.Second)

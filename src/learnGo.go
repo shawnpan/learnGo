@@ -24,12 +24,12 @@ func main() {
 	// testbase.TestArray()
 	// testbase.TestStruct()
 	// testbase.TestWeb()
-	testbase.TestTime()
+	//	testbase.TestTime()
 	// testbase.TestString()
 	// testbase.TestStrings()
 	// testbase.TestFile()
 	// testbase.TestFileServer()
-	// testbase.TestOS()
+	testbase.TestOS()
 	// testbase.TestIoUtil()
 	// testbase.TestIni()
 	// testbase.TestMysql()
@@ -45,6 +45,7 @@ func main() {
 	// testalgorithm.TestSort()
 	// testGoroutine.TestGoroutine()
 	// testbase.TestChan()
+
 }
 
 func baseTest() {

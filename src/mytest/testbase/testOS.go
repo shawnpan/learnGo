@@ -3,6 +3,7 @@ package testbase
 import (
 	"fmt"
 	"os"
+	"strings"
 )
 
 func TestOS() {
@@ -14,13 +15,14 @@ func TestOS() {
 	testRename()
 }
 func testGetwd() {
+	// 获取程序当前目录，main go文件的目录
 	dir, err := os.Getwd()
 	olddir := dir
 	if err != nil {
 		fmt.Println("Error : ", err)
 		return
 	}
-	fmt.Println("dir = ", dir)
+	fmt.Println("当前 dir = ", dir)
 
 	// 切换目录
 	os.Chdir(dir + "/mytest")
@@ -30,7 +32,7 @@ func testGetwd() {
 		fmt.Println("Error : ", err)
 		return
 	}
-	fmt.Println("dir = ", dir)
+	fmt.Println("切换后 dir = ", dir)
 
 	// 切换目录
 	os.Chdir(olddir)
@@ -38,6 +40,7 @@ func testGetwd() {
 }
 func testENV() {
 	key := "GOPATH"
+	// 通过key获取环境变量
 	v := os.Getenv(key)
 	if v == "" {
 		fmt.Println("no env value for key:", key)
@@ -47,12 +50,14 @@ func testENV() {
 
 	key = "path"
 	v = os.Getenv(key)
-	if v == "" {
-		fmt.Println("no env value for key:", key)
-	} else {
-		fmt.Println("the env value ", key, ":", v)
+	vs := strings.Split(v, ";")
+	fmt.Println(key, " value-------------------")
+	for i, value := range vs {
+		fmt.Println(i, " : ", value)
 	}
+	fmt.Println(key, " value-------------------")
 
+	// 设置环境变量
 	err := os.Setenv("temp1", "temp1")
 	if err != nil {
 		fmt.Println("Error err : ", err)
@@ -60,7 +65,9 @@ func testENV() {
 	}
 
 	data := os.Environ()
-	fmt.Println("total env : \n", data)
+	fmt.Println("total env : ------------------------------")
+	fmt.Println(data)
+	fmt.Println("total env : ------------------------------")
 
 	hostname, err := os.Hostname()
 	if err != nil {
@@ -71,6 +78,7 @@ func testENV() {
 
 }
 func testFileInfo() {
+	// 项目路径,以package main 的go文件所在目录目录为根
 	fp := "config/config.txt"
 	fi, err := os.Stat(fp)
 	if err != nil {

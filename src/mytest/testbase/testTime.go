@@ -57,6 +57,10 @@ func TestTime() {
 	fmt.Println("delta = ", delta)
 	fmt.Println("t3.Sub(t1) : ", t3.Sub(t1))
 
+	time.Sleep(time.Millisecond * 100)
+	t4 := time.Now()
+	fmt.Println("time use : ", t4.Nanosecond()-t3.Nanosecond())
+
 }
 func testTick() {
 	c := time.Tick(5 * time.Second)

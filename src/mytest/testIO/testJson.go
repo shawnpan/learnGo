@@ -1,4 +1,4 @@
-package testio
+package testIO
 
 import (
 	"encoding/json"

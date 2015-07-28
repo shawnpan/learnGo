@@ -3,11 +3,11 @@ package main
 import (
 	"fmt"
 	_ "mytest/testGoroutine"
+	_ "mytest/testTimer"
 	_ "mytest/testalgorithm"
 	"mytest/testbase"
 	_ "mytest/testdb"
 	_ "mytest/testio"
-	_ "mytest/testtime"
 )
 
 const MAX_NUM int = 100

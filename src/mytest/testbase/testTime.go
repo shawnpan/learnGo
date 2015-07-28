@@ -48,7 +48,7 @@ func TestTime() {
 	fmt.Printf("%d-%d-%d %d:%d:%d", y, m, d, h, mi, s)
 	fmt.Println("")
 
-	//休眠当前goroutine
+	// 休眠当前goroutine
 	time.Sleep(100 * time.Millisecond)
 
 	// 求时间差

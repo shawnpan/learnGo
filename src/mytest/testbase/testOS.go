@@ -24,6 +24,10 @@ func testGetwd() {
 	}
 	fmt.Println("当前 dir = ", dir)
 
+	// 系统的目录分隔符
+	ps := os.PathSeparator
+	fmt.Println("PathSeparator : ", string(ps))
+
 	// 切换目录
 	os.Chdir(dir + "/mytest")
 
@@ -94,6 +98,8 @@ func testFileInfo() {
 	fmt.Println("fi.Sys() : ", fi.Sys())
 
 }
+
+// 创建目录
 func testMkDir() {
 	dir, _ := os.Getwd()
 	var path string
@@ -116,6 +122,7 @@ func testMkDir() {
 
 }
 
+// 删除目录
 func testRmDir() {
 	dir, _ := os.Getwd()
 	fmt.Println("dir = ", dir)
@@ -131,6 +138,7 @@ func testRmDir() {
 	}
 }
 
+// 重命名
 func testRename() {
 	fp1 := "config/config.txt"
 	fp2 := "config/config1.txt"

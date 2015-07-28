@@ -28,39 +28,53 @@ func TestString() {
 
 func TestStrings() {
 	fmt.Println("testStrings---------------------------------")
-	a := "jiangkou"
+	a := "jiangkou jiangkou"
 	b := "ang"
-	fmt.Println("a=", a, "b=", b)
+	fmt.Println("[a=", a, "][b=", b, "]")
 	//查找某个字符是否在这个字符串中存在，存在返回true
-	fmt.Println(strings.Contains(a, b))
-	fmt.Println(strings.Contains(b, a))
+	fmt.Println("strings.Contains(a, b) = ", strings.Contains(a, b))
+	fmt.Println("strings.Contains(b, a) = ", strings.Contains(b, a))
 
 	//查询字符串中是否包含多个字符
-	fmt.Println(strings.ContainsAny(a, "h&z"))
-	fmt.Println(strings.ContainsAny(a, "i&o"))
+	c := "h&z"
+	d := "i&o"
+	fmt.Println("[c=", c, "][d=", d, "]")
+	fmt.Println("strings.ContainsAny(a, c) = ", strings.ContainsAny(a, c))
+	fmt.Println("strings.ContainsAny(a, d) = ", strings.ContainsAny(a, d))
 
 	//一段字符串中有多少匹配到的字符
-	fmt.Println(strings.Count(a, b))
-	fmt.Println(strings.Count("hello hello", "l"))
+	fmt.Println("strings.Count(a, b) = ", strings.Count(a, b))
 
-	//两个字符串在完全小写的情况下是否相等uff8编码
-	fmt.Println(strings.EqualFold(a, "JiAnGKOu"))
+	//两个字符串在完全小写的情况下是否相等
+	e := "JiAnGKOu"
+	fmt.Println("e=", e)
+	fmt.Println("strings.EqualFold(a, e) = ", strings.EqualFold(a, e))
 
 	//空格来分割字符串最后返回的是[]string的切片
-	fmt.Println(strings.Fields("aa bcd efghij"))
+	f := "aa bcd efghij"
+	fmt.Println("f=", f)
+	fmt.Println("strings.Fields(f) = ", strings.Fields(f))
 
 	//根据自定义函数来切分
-	fmt.Println(strings.FieldsFunc("aa|bcd_d|fgh_i|ej", func(s rune) bool {
-		if s == rune('|') {
+	i := "aa|bcd_d|fgh_i|ej"
+	j := '|'
+	fmt.Println("[i=", i, "][j=", j, "]")
+	fmt.Println(strings.FieldsFunc(i, func(s rune) bool {
+		if s == rune(j) {
 			return true
 		}
 		return false
 	}))
-	fmt.Println(strings.Split("aa|bcd_d|fgh_i|ej", "|"))
+
+	fmt.Println("strings.Split(i, string(j)) = ", strings.Split(i, string(j)))
 
 	//判断是否以某个字符串开头
-	fmt.Println(strings.HasPrefix(a, "jia"))
+	g := "jia"
+	fmt.Println("g=", g)
+	fmt.Println("strings.HasPrefix(a, g) = ", strings.HasPrefix(a, g))
 
 	//判断是否以某个字符串结尾
-	fmt.Println(strings.HasSuffix(a, "ou"))
+	h := "ou"
+	fmt.Println("h=", h)
+	fmt.Println("strings.HasSuffix(a, h) = ", strings.HasSuffix(a, h))
 }

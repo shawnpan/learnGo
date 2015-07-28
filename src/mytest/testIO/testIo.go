@@ -21,6 +21,9 @@ func TestFile() {
 
 }
 func testReadFull(fn string) {
+	// 每次从文件中读出buf长度个字节，返回读出的长度和error
+	// 当没有数据可读时，返回EOF
+	// 当剩余长度不够时，返回ErrUnexpectedEOF
 	fmt.Println("testReadFull---------------------------------------")
 	r, err := os.Open(fn)
 	if err != nil {

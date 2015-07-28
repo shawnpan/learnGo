@@ -3,11 +3,11 @@ package main
 import (
 	"fmt"
 	_ "mytest/testGoroutine"
+	"mytest/testIO"
 	_ "mytest/testTimer"
 	_ "mytest/testalgorithm"
-	"mytest/testbase"
+	_ "mytest/testbase"
 	_ "mytest/testdb"
-	_ "mytest/testio"
 )
 
 const MAX_NUM int = 100
@@ -26,9 +26,10 @@ func main() {
 	// testbase.TestWeb()
 	//	testbase.TestTime()
 	// testbase.TestString()
-	testbase.TestStrings()
-	// testbase.TestFile()
-	// testbase.TestFileServer()
+	//	testbase.TestStrings()
+	testIO.TestFile()
+	//	testIO.TestFileServer()
+
 	//	testbase.TestOS()
 	// testbase.TestIoUtil()
 	// testbase.TestIni()

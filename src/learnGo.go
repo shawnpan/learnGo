@@ -2,8 +2,9 @@ package main
 
 import (
 	"fmt"
+	"mytest/testGUI"
 	_ "mytest/testGoroutine"
-	"mytest/testIO"
+	_ "mytest/testIO"
 	_ "mytest/testTimer"
 	_ "mytest/testalgorithm"
 	_ "mytest/testbase"
@@ -27,7 +28,7 @@ func main() {
 	//	testbase.TestTime()
 	// testbase.TestString()
 	//	testbase.TestStrings()
-	testIO.TestFile()
+	//	testIO.TestFile()
 	//	testIO.TestFileServer()
 
 	//	testbase.TestOS()
@@ -46,7 +47,9 @@ func main() {
 	// testalgorithm.TestSort()
 	// testGoroutine.TestGoroutine()
 	// testbase.TestChan()
-
+	testGUI.TestGUI()
+	var a int
+	fmt.Scanf("%d", &a)
 }
 
 func baseTest() {

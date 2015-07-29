@@ -2,12 +2,12 @@ package main
 
 import (
 	"fmt"
-	"mytest/testGUI"
+	_ "mytest/testGUI"
 	_ "mytest/testGoroutine"
 	_ "mytest/testIO"
 	_ "mytest/testTimer"
 	_ "mytest/testalgorithm"
-	_ "mytest/testbase"
+	"mytest/testbase"
 	_ "mytest/testdb"
 )
 
@@ -21,9 +21,9 @@ const (
 
 func main() {
 
-	// testbase.TestMap()
-	// testbase.TestArray()
-	// testbase.TestStruct()
+	//	testbase.TestMap()
+	//	testbase.TestArray()
+	testbase.TestStruct()
 	// testbase.TestWeb()
 	//	testbase.TestTime()
 	// testbase.TestString()
@@ -47,9 +47,10 @@ func main() {
 	// testalgorithm.TestSort()
 	// testGoroutine.TestGoroutine()
 	// testbase.TestChan()
-	testGUI.TestGUI()
-	var a int
-	fmt.Scanf("%d", &a)
+	//	testGUI.TestGUI
+
+	//	var a int
+	//	fmt.Scanf("%d", &a)
 }
 
 func baseTest() {

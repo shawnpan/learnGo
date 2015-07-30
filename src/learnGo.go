@@ -4,10 +4,10 @@ import (
 	"fmt"
 	_ "mytest/testGUI"
 	_ "mytest/testGoroutine"
-	_ "mytest/testIO"
+	"mytest/testIO"
 	_ "mytest/testTimer"
 	_ "mytest/testalgorithm"
-	"mytest/testbase"
+	_ "mytest/testbase"
 	_ "mytest/testdb"
 )
 
@@ -23,20 +23,20 @@ func main() {
 
 	//	testbase.TestMap()
 	//	testbase.TestArray()
-	testbase.TestStruct()
-	// testbase.TestWeb()
+	//	testbase.TestStruct()
 	//	testbase.TestTime()
-	// testbase.TestString()
+	//	testbase.TestString()
 	//	testbase.TestStrings()
+	//	testbase.TestContainer()
 	//	testIO.TestFile()
 	//	testIO.TestFileServer()
-
 	//	testbase.TestOS()
+	testIO.TestWeb()
+
 	// testbase.TestIoUtil()
 	// testbase.TestIni()
 	// testbase.TestMysql()
 	// testbase.TestJSON()
-	// testbase.TestContainer()
 	// testbase.TestRand()
 	// testbase.TestMath()
 	// testbase.TestMyNet()

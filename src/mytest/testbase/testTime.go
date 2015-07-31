@@ -61,6 +61,11 @@ func TestTime() {
 	t4 := time.Now()
 	fmt.Println("time use : ", t4.Nanosecond()-t3.Nanosecond())
 
+	// 获取在指定日期上加上一段时间后的日期
+	baseTime := time.Date(1980, 1, 6, 0, 0, 0, 0, time.UTC)
+	date := baseTime.Add(1722*7*24*time.Hour + 24*time.Hour + 66355*time.Second)
+	fmt.Println(date)
+
 }
 func testTick() {
 	c := time.Tick(5 * time.Second)

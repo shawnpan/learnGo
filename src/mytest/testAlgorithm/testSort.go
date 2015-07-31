@@ -1,4 +1,4 @@
-package testalgorithm
+package testAlgorithm
 
 import (
 	"fmt"
@@ -30,11 +30,17 @@ func TestSort() {
 
 	// size = 100
 	arr = mkArr(size)
-	arr = mkArr(size)
+	start = time.Now().Unix()
 	testInsertSort(arr)
 	fmt.Println("time use : ", (time.Now().Unix() - start), "s")
 	// checkArr(arr)
 
+	size = 10000
+	arr = mkArr(size)
+	start = time.Now().Unix()
+	testSleepSort(arr)
+	fmt.Println("time use : ", (time.Now().Unix() - start), "s")
+	checkArr(arr)
 }
 func mkArr(size int) []int {
 	arr := make([]int, size, size)
@@ -142,5 +148,30 @@ func testInsertSort(arr []int) {
 				break
 			}
 		}
+	}
+}
+
+// 睡眠排序
+//睡眠排序算法是一个天才程序员发明的，想法很简单，就是针对数组里的不同的数开多个线程，
+//每个线程根据数的大小睡眠，自然睡的时间越长的，数越大，哈哈，搞笑吧，这种算法看起来很荒唐，
+//但实际上很天才，它可以充分利用多核cpu进行计算
+func testSleepSort(arr []int) {
+
+	ch := make(chan int)
+	for _, value := range arr {
+		go func(val int) {
+			for i := 0; i < val; i++ {
+				time.Sleep(10000 * time.Nanosecond) // sleep方法只能接受time.Duration，但不能乘以val，晕
+			}
+			ch <- val
+		}(value)
+	}
+	res := []int{}
+	for i := 0; i < len(arr); i++ {
+		val := <-ch
+		res = append(res, val)
+	}
+	for i, val := range res {
+		arr[i] = val
 	}
 }

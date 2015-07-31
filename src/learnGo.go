@@ -2,13 +2,14 @@ package main
 
 import (
 	"fmt"
+	"mytest/testAlgorithm"
 	_ "mytest/testGUI"
 	_ "mytest/testGoroutine"
 	_ "mytest/testIO"
 	_ "mytest/testTimer"
-	_ "mytest/testalgorithm"
-	"mytest/testbase"
+	_ "mytest/testbase"
 	_ "mytest/testdb"
+	"runtime"
 )
 
 const MAX_NUM int = 100
@@ -20,7 +21,9 @@ const (
 )
 
 func main() {
-
+	numCpu := runtime.NumCPU()
+	runtime.GOMAXPROCS(numCpu)
+	fmt.Println("runtime set cpu num : ", numCpu)
 	//	testbase.TestMap()
 	//	testbase.TestArray()
 	//	testbase.TestStruct()
@@ -29,10 +32,10 @@ func main() {
 	//	testbase.TestStrings()
 	//	testbase.TestContainer()
 	//	testbase.TestInterface()
-	testbase.TestReflect()
+	//	testbase.TestReflect()
+	//	testbase.TestOS()
 	//	testIO.TestFile()
 	//	testIO.TestFileServer()
-	//	testbase.TestOS()
 	//	testIO.TestWeb()
 	// testbase.TestIoUtil()
 	// testbase.TestIni()
@@ -44,8 +47,9 @@ func main() {
 	// testbase.TestGet()
 	// testbase.TestNewRequest()
 	// testio.TestBufio()
-	// testtime.TestTimer()
-	// testalgorithm.TestSort()
+	//	testTimer.TestTimer()
+
+	testAlgorithm.TestSort()
 	// testGoroutine.TestGoroutine()
 	// testbase.TestChan()
 	//	testGUI.TestGUI
